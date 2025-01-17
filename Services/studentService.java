@@ -1,12 +1,17 @@
-package Services;
-import Models.Student;
+package services;
+import models.Student;
 import java.util.ArrayList;
-class studentService
+public class studentService
 {
     private ArrayList<Student> students =new ArrayList<Student>();
+
+    public studentService()
+    {
+    }
+
     public void putStudent(String name,String branch)
     {
-        Student obj=new Student(students.size+1,name,branch,0);
+        Student obj=new Student(students.size()+1,name,branch,0);
         students.add(obj);
     }
     public Student getStudent(int id)
@@ -14,9 +19,10 @@ class studentService
        
          for(int i=0;i<students.size();i++)
          {
-                if(students[i].id==id)
+                
+                if(students.get(i).id==id)
                 {
-                    return students[i];
+                    return students.get(i);
                 }
          }
          return null;
