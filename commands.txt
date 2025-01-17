@@ -1,0 +1,3 @@
+compile command -- javac -d bin Main.java models/Student.java Services/studentService.java
+
+run command ------ java -cp bin Main
