@@ -1,9 +1,9 @@
-package Models;
+package models;
 public class Student
-{   int id;
-    String name;
-    String branch;
-    int borrowedbooks;
+{   public int id;
+    public String name;
+    public String branch;
+    public int borrowedbooks;
     
    public Student(int id, String name,String branch,int borrowedbooks)
     {
@@ -13,7 +13,3 @@ public class Student
         this.borrowedbooks=borrowedbooks;
     }
 }
-
-
-
-
