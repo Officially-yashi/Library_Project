@@ -12,7 +12,7 @@ class Main {
         JButton button3 = new JButton(" exit");
 
         // second frame variables
-        JButton submit = new JButton();
+        JButton submit = new JButton("Submit");
         JTextField inputName = new JTextField();
         JTextField inputBranch = new JTextField();
 
@@ -60,10 +60,16 @@ class Main {
         // New Frame button event listener
         submit.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                
+                System.out.println("ActionListener added");
+                JOptionPane.showMessageDialog(frame, "Button clicked!", "Popup", JOptionPane.INFORMATION_MESSAGE);
                 String name=inputName.getText();
                 String branch=inputBranch.getText();
                 studentService service = new studentService();
                 service.putStudent(name, branch);
+                System.out.println("button clicked");
+                
+               
             }
         });
 
