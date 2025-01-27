@@ -59,7 +59,9 @@ class Main {
 
         // New Frame button event listener
         submit.addActionListener(new ActionListener() {
+
             public void actionPerformed(ActionEvent e) {
+                System.out.println("test");
                 String name=inputName.getText();
                 String branch=inputBranch.getText();
                 studentService service = new studentService();
