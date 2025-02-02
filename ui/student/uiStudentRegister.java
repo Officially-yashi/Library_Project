@@ -2,7 +2,7 @@ package ui.student;
 
 import java.awt.event.*;
 import javax.swing.*;
-import ui.uiMain;
+import ui.student.indexUIStudent;
 
 public class uiStudentRegister {
 
@@ -46,7 +46,7 @@ public class uiStudentRegister {
 
         backButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                uiMain.isVisible(true);
+                indexUIStudent.isVisible(true);
                 studentFrame.dispose();
             }
         });

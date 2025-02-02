@@ -2,64 +2,58 @@ package ui;
 
 import java.awt.event.*;
 import javax.swing.*;
-import ui.student.uiStudentRegister;
+import ui.student.indexUIStudent;
 
 public class uiMain{
     // Declare JFrame and components
-    static JFrame frame;
-    JButton button1, button2, button3;
+    static JFrame mainFrame;
+    JButton adminButton, studentButton, exiButton;
     boolean isVisible = true;
     
     public uiMain() {
-        frame = new JFrame("Student Registration");
-        // Initialize buttons
-        button1 = new JButton("Register Yourself");
-        button2 = new JButton("Get Student Details");
-        button3 = new JButton("Exit");
+        mainFrame = new JFrame("Simple Frame");
+        mainFrame.setSize(500, 300);
+        mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        mainFrame.setLayout(null);
 
-        // Set button positions
-        button1.setBounds(100, 50, 200, 40);
-        button2.setBounds(100, 100, 200, 40);
-        button3.setBounds(100, 150, 200, 40);
+        adminButton = new JButton("Admin Panel");
+        studentButton = new JButton("Student Panel");
+        exiButton = new JButton("Exit");
 
 
-        // Add components to frame
-        frame.add(button1);
-        frame.add(button2);
-        frame.add(button3);
-        
-        // Set frame properties
-        frame.setSize(500, 300);
-        frame.setLayout(null);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-        
-        // Register yourself button
-        button1.addActionListener(new ActionListener() {
+        adminButton.setBounds(100, 50, 200, 40);
+        studentButton.setBounds(100, 100, 200, 40);
+        exiButton.setBounds(100, 150, 200, 40);
+
+
+
+        adminButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                System.out.println("hi");
-                new uiStudentRegister();
+                System.out.println("Admin Panel button clicked");
             }
         });
 
-        // Get Student Details Button
-        button2.addActionListener(new ActionListener() {
+        studentButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(frame, "Fetching Student Details...");
+                mainFrame.setVisible(false);
+                new indexUIStudent();
             }
         });
-        
-        // exit button
-        button3.addActionListener(new ActionListener() {
+
+        exiButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                frame.dispose(); // Close the application
+                mainFrame.dispose(); // Close the application
             }
         });
+
+        mainFrame.add(adminButton);
+        mainFrame.add(studentButton);
+        mainFrame.add(exiButton);
+        mainFrame.setVisible(true);
     }
-
 
     public static void isVisible(boolean val){
-        frame.setVisible(val);
+        mainFrame.setVisible(val);
     }
+
 }

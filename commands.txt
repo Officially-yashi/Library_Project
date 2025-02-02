@@ -1,2 +1,2 @@
-compile command -- javac -d bin Main.java models/Student.java Services/studentService.java
+compile command -- javac -d bin Main.java models/Student.java Services/studentService.java ui/uiMain.java ui/student/uiStudentRegister.java ui/student/indexUIStudent.java
 run command ------ java -cp bin Main
