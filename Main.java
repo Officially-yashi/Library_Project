@@ -1,14 +1,10 @@
-import java.awt.event.*;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.swing.*;
-import services.studentService;
+import ui.uiMain;
 
 class Main {
-static List<String> studentList = new ArrayList<>();
+    //static List<String> studentList = new ArrayList<>();
     public static void main(String args[]) {
 
+        /*
         JFrame frame = new JFrame();
 
         JButton button1 = new JButton(" register yourself");
@@ -133,7 +129,9 @@ static List<String> studentList = new ArrayList<>();
                 System.exit(0);
             }
         });
+        */
 
+       new uiMain();
        
     }
 }

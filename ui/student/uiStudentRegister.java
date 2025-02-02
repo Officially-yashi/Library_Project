@@ -4,13 +4,13 @@ import java.awt.event.*;
 import javax.swing.*;
 import ui.uiMain;
 
-public class uiStudentRegister extends uiMain {
+public class uiStudentRegister {
 
     // Declare JFrame and components
     JFrame studentFrame;
     JButton submit, backButton;
-    JTextField inputName = new JTextField();
-    JTextField inputBranch = new JTextField();
+    JTextField inputName;
+    JTextField inputBranch;
 
     public uiStudentRegister() {
         // Initialize frame
@@ -21,6 +21,8 @@ public class uiStudentRegister extends uiMain {
         backButton = new JButton("Back");
         backButton.setBounds(400, 20, 70, 40);
         studentFrame.add(backButton);
+
+        submit = new JButton("submit");
 
         JLabel nameLabel = new JLabel("Enter your name");
         JLabel branchLabel = new JLabel("Enter your branch");
@@ -44,7 +46,7 @@ public class uiStudentRegister extends uiMain {
 
         backButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                frame.setVisible(true);
+                uiMain.isVisible(true);
                 studentFrame.dispose();
             }
         });

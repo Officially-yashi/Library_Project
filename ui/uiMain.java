@@ -2,14 +2,16 @@ package ui;
 
 import java.awt.event.*;
 import javax.swing.*;
+import ui.student.uiStudentRegister;
 
 public class uiMain{
     // Declare JFrame and components
-    protected static JFrame frame = new JFrame("Student Registration");;
+    static JFrame frame;
     JButton button1, button2, button3;
+    boolean isVisible = true;
     
     public uiMain() {
-
+        frame = new JFrame("Student Registration");
         // Initialize buttons
         button1 = new JButton("Register Yourself");
         button2 = new JButton("Get Student Details");
@@ -36,7 +38,8 @@ public class uiMain{
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                // openRegistrationForm
+                System.out.println("hi");
+                new uiStudentRegister();
             }
         });
 
@@ -53,5 +56,10 @@ public class uiMain{
                 frame.dispose(); // Close the application
             }
         });
+    }
+
+
+    public static void isVisible(boolean val){
+        frame.setVisible(val);
     }
 }
