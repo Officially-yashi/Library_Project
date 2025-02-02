@@ -3,6 +3,7 @@ package ui.student;
 import java.awt.event.*;
 import javax.swing.*;
 import ui.student.indexUIStudent;
+import services.studentService;
 
 public class uiStudentRegister {
 
@@ -48,6 +49,25 @@ public class uiStudentRegister {
             public void actionPerformed(ActionEvent e) {
                 indexUIStudent.isVisible(true);
                 studentFrame.dispose();
+            }
+        });
+        
+        submit.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                
+                System.out.println("ActionListener added");
+               
+                String name=inputName.getText();
+                String branch=inputBranch.getText();
+                if (!name.isEmpty() && !branch.isEmpty()) {
+
+                    // -- FOCUS HERE --
+                    studentService.putStudent(name, branch);
+                    JOptionPane.showMessageDialog(studentFrame, "Student Registered Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(studentFrame, "Please fill all fields!", "Error", JOptionPane.ERROR_MESSAGE);
+                }                
             }
         });
     }
